@@ -35,20 +35,31 @@
 漏洞程序（fake.c）
 
 核心是一个使用 gets() 的缓冲区溢出漏洞：
+
 int main() {
+
     char buffer[16];
+    
     gets(buffer);          // ⚠️ 不检查输入长度
+    
     return 0;
+    
 }
 
 可跳转的目标函数
 
 函数名                | 地址（调试环境）     | 行为
+
 trick()              | 0x00401460         | 打印提示（良性）
+
 reboot()             | 0x00401475         | 重启计算机
+
 colse()              | 0x0040148d         | 关闭计算机
+
 download_chaoxing()  | 0x004014a5         | 下载学习通安装包（可进一步换为病毒软件）
+
 uninstall_chaoxing() | 0x004014e9         | 卸载学习通（可进一步换为删除根目录？）
+
 
 攻击原理与步骤
 
