@@ -12,18 +12,28 @@
 
 
 📂 项目结构
+
 ├── fake.c           # 含漏洞的 C 源代码（核心）
+
 ├── fake.exe         # 编译后的可执行程序
+
 ├── abspath.py       # Python Tkinter GUI 前端程序
+
 ├── abspath.exe      # Python 打包后的可执行文件（经过包装后的“安全”程序）
+
 ├── address.txt      # GDB 反汇编记录 — 各函数的入口地址
+
 ├── tiaoshi.txt      # 调试与测试过程记录
+
 ├── payload.txt      # 构造的 Payload 示例（十六进制格式）
+
 ├── 实验报告.doc      # 课程设计实验报告（Word 文档）
+
 └── README.md        # 本文件
 
 
 漏洞程序（fake.c）
+
 核心是一个使用 gets() 的缓冲区溢出漏洞：
 int main() {
     char buffer[16];
@@ -32,6 +42,7 @@ int main() {
 }
 
 可跳转的目标函数
+
 函数名                | 地址（调试环境）     | 行为
 trick()              | 0x00401460         | 打印提示（良性）
 reboot()             | 0x00401475         | 重启计算机
@@ -40,6 +51,7 @@ download_chaoxing()  | 0x004014a5         | 下载学习通安装包（可进一
 uninstall_chaoxing() | 0x004014e9         | 卸载学习通（可进一步换为删除根目录？）
 
 攻击原理与步骤
+
 1️⃣ 确定溢出偏移量
 输入 30 个 a → EIP = 0x00616161（"aaa"） 输入 29 个 a + "bcd" → EIP = 0x64636261（"abcd"） → 确定填充大小为 28 字节，第 29~32 字节就是返回地址。
 
@@ -57,21 +69,29 @@ python -c "import sys; sys.stdout.buffer.write(bytes.fromhex('123456789012345678
 
 
 Python GUI（abspath.py）
+
 Tkinter 图形界面，将攻击流程包装为一个"软件激活码"的交互场景：输入十六进制激活码 → 调用底层 fake.exe 执行溢出。
 
 
 编译与使用
+
 # 编译 C 程序
+
 gcc fake.c -o fake.exe -static
 
 # GDB 调试
+
 gdb fake.exe
 
 # 运行 GUI
+
 python abspath.py
 
 
  安全建议
+ 
 • 永远不要使用 gets()，改用 fgets()
+
 • 启用 ASLR、DEP/NX、栈保护等编译选项
+
 • 不要以管理员权限运行来路不明的程序
