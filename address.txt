@@ -1,0 +1,216 @@
+(gdb) disassemble trick
+Dump of assembler code for function trick:
+   0x00401460 <+0>:     push   %ebp
+   0x00401461 <+1>:     mov    %esp,%ebp
+   0x00401463 <+3>:     sub    $0x18,%esp
+   0x00401466 <+6>:     movl   $0x405064,(%esp)
+   0x0040146d <+13>:    call   0x403b78 <puts>
+   0x00401472 <+18>:    nop
+   0x00401473 <+19>:    leave
+   0x00401474 <+20>:    ret
+
+(gdb) disassemble reboot
+Dump of assembler code for function reboot:
+   0x00401475 <+0>:     push   %ebp
+   0x00401476 <+1>:     mov    %esp,%ebp
+   0x00401478 <+3>:     sub    $0x28,%esp
+   0x0040147b <+6>:     movl   $0x405071,(%esp)
+   0x00401482 <+13>:    call   0x403b48 <system>
+   0x00401487 <+18>:    mov    %eax,-0xc(%ebp)
+   0x0040148a <+21>:    nop
+   0x0040148b <+22>:    leave
+   0x0040148c <+23>:    ret
+
+(gdb) disassemble colse
+Dump of assembler code for function colse:
+   0x0040148d <+0>:     push   %ebp
+   0x0040148e <+1>:     mov    %esp,%ebp
+   0x00401490 <+3>:     sub    $0x28,%esp
+   0x00401493 <+6>:     movl   $0x405082,(%esp)
+   0x0040149a <+13>:    call   0x403b48 <system>
+   0x0040149f <+18>:    mov    %eax,-0xc(%ebp)
+   0x004014a2 <+21>:    nop
+   0x004014a3 <+22>:    leave
+   0x004014a4 <+23>:    ret
+End of assembler dump.
+
+(gdb) disassemble download_chaoxing
+Dump of assembler code for function download_chaoxing:
+   0x004014a5 <+0>:     push   %ebp
+   0x004014a6 <+1>:     mov    %esp,%ebp
+   0x004014a8 <+3>:     sub    $0x28,%esp
+   0x004014ab <+6>:     movl   $0x405094,(%esp)
+   0x004014b2 <+13>:    call   0x403b78 <puts>
+   0x004014b7 <+18>:    movl   $0x4050bc,(%esp)
+   0x004014be <+25>:    call   0x403b48 <system>
+   0x004014c3 <+30>:    mov    %eax,-0xc(%ebp)
+   0x004014c6 <+33>:    cmpl   $0x0,-0xc(%ebp)
+   0x004014ca <+37>:    jne    0x4014da <download_chaoxing+53>
+   0x004014cc <+39>:    movl   $0x405128,(%esp)
+   0x004014d3 <+46>:    call   0x403b78 <puts>
+   0x004014d8 <+51>:    jmp    0x4014e6 <download_chaoxing+65>
+   0x004014da <+53>:    movl   $0x405160,(%esp)
+   0x004014e1 <+60>:    call   0x403b78 <puts>
+   0x004014e6 <+65>:    nop
+   0x004014e7 <+66>:    leave
+   0x004014e8 <+67>:    ret
+End of assembler dump.
+
+(gdb) disassemble uninstall_chaoxing
+Dump of assembler code for function uninstall_chaoxing:
+   0x004014e9 <+0>:     push   %ebp
+   0x004014ea <+1>:     mov    %esp,%ebp
+   0x004014ec <+3>:     sub    $0x28,%esp
+   0x004014ef <+6>:     movl   $0x40519c,(%esp)
+   0x004014f6 <+13>:    call   0x403b78 <puts>
+   0x004014fb <+18>:    movl   $0x4051bc,(%esp)
+   0x00401502 <+25>:    call   0x403b48 <system>
+   0x00401507 <+30>:    mov    %eax,-0xc(%ebp)
+   0x0040150a <+33>:    movl   $0x405208,(%esp)
+   0x00401511 <+40>:    call   0x403b48 <system>
+   0x00401516 <+45>:    mov    %eax,-0x10(%ebp)
+   0x00401519 <+48>:    movl   $0x405234,(%esp)
+   0x00401520 <+55>:    call   0x403b48 <system>
+   0x00401525 <+60>:    mov    %eax,-0x14(%ebp)
+   0x00401528 <+63>:    movl   $0x405264,(%esp)
+   0x0040152f <+70>:    call   0x403b48 <system>
+   0x00401534 <+75>:    mov    %eax,-0x18(%ebp)
+   0x00401537 <+78>:    movl   $0x4052bc,(%esp)
+   0x0040153e <+85>:    call   0x403b48 <system>
+   0x00401543 <+90>:    movl   $0x4052e0,(%esp)
+   0x0040154a <+97>:    call   0x403b48 <system>
+   0x0040154f <+102>:   movl   $0x405304,(%esp)
+   0x00401556 <+109>:   call   0x403b78 <puts>
+   0x0040155b <+114>:   nop
+   0x0040155c <+115>:   leave
+   0x0040155d <+116>:   ret
+End of assembler dump.
+
+(gdb) disassemble main
+Dump of assembler code for function main:
+   0x0040155e <+0>:     push   %ebp
+   0x0040155f <+1>:     mov    %esp,%ebp
+   0x00401561 <+3>:     and    $0xfffffff0,%esp
+   0x00401564 <+6>:     sub    $0x20,%esp
+   0x00401567 <+9>:     call   0x401ad0 <__main>
+   0x0040156c <+14>:    lea    0x10(%esp),%eax
+   0x00401570 <+18>:    mov    %eax,(%esp)
+   0x00401573 <+21>:    call   0x403ba0 <gets>
+   0x00401578 <+26>:    lea    0x10(%esp),%eax
+   0x0040157c <+30>:    mov    %eax,0x4(%esp)
+   0x00401580 <+34>:    movl   $0x405344,(%esp)
+   0x00401587 <+41>:    call   0x403b80 <printf>
+   0x0040158c <+46>:    mov    $0x0,%eax
+   0x00401591 <+51>:    leave
+   0x00401592 <+52>:    ret
+   0x00401593 <+53>:    nop
+   0x00401594 <+54>:    xchg   %ax,%ax
+   0x00401596 <+56>:    xchg   %ax,%ax
+   0x00401598 <+58>:    xchg   %ax,%ax
+   0x0040159a <+60>:    xchg   %ax,%ax
+   0x0040159c <+62>:    xchg   %ax,%ax
+   0x0040159e <+64>:    xchg   %ax,%ax
+End of assembler dump.
+
+
+
+(gdb) info functions
+All defined functions:
+
+0x00401460  trick
+0x00401475  reboot
+0x0040148d  colse
+0x004014a5  download_chaoxing
+0x004014e9  uninstall_chaoxing
+0x0040155e  main
+
+Non-debugging symbols:
+0x00000000  _Jv_RegisterClasses
+0x00000000  __deregister_frame_info
+0x00000000  __register_frame_info
+0x004012a0  _mingw32_init_mainargs
+0x004012e0  mainCRTStartup
+0x00401300  WinMainCRTStartup
+0x00401320  atexit
+0x00401330  _onexit
+0x00401340  __gcc_register_frame
+0x00401430  __gcc_deregister_frame
+0x00401460  trick
+0x00401475  reboot
+0x0040148d  colse
+0x004014a5  download_chaoxing
+0x004014e9  uninstall_chaoxing
+0x0040155e  main
+0x004015a0  _setargv
+0x00401940  __cpu_features_init
+0x00401a50  __do_global_dtors
+0x00401a80  __do_global_ctors
+0x00401ad0  __main
+0x00401b40  __dyn_tls_init@12
+0x00401bd0  __tlregdtor
+0x00401c40  ___w64_mingwthr_add_key_dtor
+0x00401cd0  ___w64_mingwthr_remove_key_dtor
+0x00401d70  __mingw_TLScallback
+0x00401f50  _pei386_runtime_relocator
+0x00402150  fesetenv
+0x004030f0  __mingw_glob
+0x004031e0  __mingw_globfree
+0x00403240  __mingw_dirname
+0x004037c0  __mingw_opendir
+0x00403980  __mingw_readdir
+0x004039d0  __mingw_closedir
+0x00403a20  __mingw_rewinddir
+0x00403a80  __mingw_telldir
+0x00403ab0  __mingw_seekdir
+0x00403b30  wcstombs
+0x00403b38  vfprintf
+0x00403b40  tolower
+0x00403b48  system
+0x00403b50  strlen
+0x00403b58  strcoll
+0x00403b60  signal
+0x00403b68  setlocale
+0x00403b70  realloc
+0x00403b78  puts
+0x00403b80  printf
+0x00403b88  memcpy
+0x00403b90  mbstowcs
+0x00403b98  malloc
+0x00403ba0  gets
+0x00403ba8  fwrite
+0x00403bb0  free
+0x00403bb8  calloc
+0x00403bc0  abort
+0x00403bc8  _setmode
+0x00403bd0  _isctype
+0x00403bd8  _fullpath
+0x00403be0  _errno
+0x00403be8  _cexit
+0x00403bf0  __p__fmode
+0x00403bf8  __p__environ
+0x00403c00  __getmainargs
+0x00403c08  VirtualQuery@12
+0x00403c10  VirtualProtect@16
+0x00403c18  TlsGetValue@4
+0x00403c20  SetUnhandledExceptionFilter@4
+0x00403c28  LoadLibraryA@4
+0x00403c30  LeaveCriticalSection@4
+0x00403c38  InitializeCriticalSection@4
+0x00403c40  GetProcAddress@8
+0x00403c48  GetModuleHandleA@4
+0x00403c50  GetLastError@0
+0x00403c58  GetCommandLineA@0
+0x00403c60  FreeLibrary@4
+0x00403c68  FindNextFileA@8
+0x00403c70  FindFirstFileA@8
+0x00403c78  FindClose@4
+0x00403c80  ExitProcess@4
+0x00403c88  EnterCriticalSection@4
+0x00403c90  DeleteCriticalSection@4
+0x00403c98  stricoll
+0x00403ca0  strdup
+0x00403cb0  register_frame_ctor
+0x00403cc0  _CTOR_LIST__
+0x00403cc0  __CTOR_LIST__
+0x00403ccc  _DTOR_LIST__
+0x00403ccc  __DTOR_LIST__
